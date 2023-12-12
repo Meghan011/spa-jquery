@@ -1,25 +1,143 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Simple jQuery SPA</title>
-</head>
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="./css/cliff.css">
-<link rel="stylesheet" href="./css/mystyle.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Web Developer</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="./css/cliff.css">
+    <link rel="stylesheet" href="./css/mystyle.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        p {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        /* Your additional styles here */
+        .avatar {
+            border-radius: 50%;
+            width: 130px;
+            height: 130px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .card {
+            margin: 4%;
+            background: white;
+            width: 50%;
+            border-radius: 6px;
+            padding: 3%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Smooth scrolling styles */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .w3-bar-item {
+            cursor: pointer;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("a[href^='#']").on('click', function (e) {
+                e.preventDefault();
+
+                var target = this.hash;
+                var $target = $(target);
+
+                $('html, body').stop().animate({
+                    'scrollTop': $target.offset().top
+                }, 900, 'swing', function () {
+                    window.location.hash = target;
+                });
+            });
+        });
+    </script>
+</head>
 <body>
 
+    <!-- Navigation Bar -->
     <nav>
         <div class="w3-bar w3-light-grey">
             <a href="#home" class="w3-bar-item w3-button">Home</a>
-            <a href="#about" class="w3-bar-item w3-button">About Us</a>
+            <a href="#about" class="w3-bar-item w3-button">About Me</a>
+			<a href="#mycard" class="w3-bar-item w3-button">My Avatar</a>
+            <!-- Add other navigation links as needed -->
         </div>
     </nav>
 
-        <div id="content"></div>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="./js/router.js"></script>
-    
+    <!-- Content Section -->
+    <div id="content">
+
+        <!-- Home Section -->
+        <section id="home">
+            <!-- Your existing home content here -->
+            <h2>Welcome to My Portfolio</h2>
+            <div class="card">
+                <img src="img/1.png" alt="Your Name - Profile Picture" class="avatar">
+                <p>Passionate web developer with expertise in PHP, Laravel, Python, MySQL, and GitHub versioning.</p>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about">
+            <h1>About Me</h1>
+            <img src="https://placekitten.com/200/200" alt="Your Name" class="avatar">
+            <p>Hello there! I'm <strong>Your Name</strong>, a passionate and creative individual with a deep love for <em>your interests or profession</em>. My journey in <em>your field</em> has been marked by a commitment to excellence and a drive to make a positive impact.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis vehicula ligula eget libero accumsan, at mattis nisi tristique. Proin non tristique purus, a imperdiet felis. Vivamus ac orci eu felis congue porttitor. Suspendisse potenti.</p>
+            <p>In my free time, you'll find me exploring <em>your hobbies or interests</em>, whether it's reading a good book, experimenting with new recipes in the kitchen, or embarking on exciting adventures. I believe in the power of continuous learning and am always seeking opportunities to expand my horizons.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis vehicula ligula eget libero accumsan, at mattis nisi tristique. Proin non tristique purus, a imperdiet felis. Vivamus ac orci eu felis congue porttitor. Suspendisse potenti.</p>
+            <p>Let's connect and share our stories! Feel free to reach out to me at <a href="mailto:your@email.com">your@email.com</a> or connect with me on <a href="https://www.linkedin.com/in/your-profile" target="_blank">LinkedIn</a>.</p>
+        </section>
+ <section id="mycard">
+        <!---Meghan Start-->
+  <div class="card" style="margin: 4%;background: white; width: 50%; border-radius: 6px; padding: 3%;  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+   <!---MyAvatar-->
+   <img src="img/Meghan.png" alt="Avatar" class="avatar" style="border-radius: 50%; width: 130px; height: 130px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+    <h2 style="color:#647C90;">Your Name</h2>
+	<p style="color:#647C90;"><strong style="color:#868B8E;">Meghan Theriz</strong> Rautraut Barcibal</p>
+	<!---M\y GitHub Button-->
+	<button type="button">My GitHub!</button>
+</div>
+</section>
+   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+ <script>
+        // jQuery click event handler
+        $(document).ready(function () {
+            $("#githubButton").click(function () {
+                // Redirect to your GitHub profile
+                window.location.href = "https://github.com/Meghan011";
+            });
+        });
+    </script>
+<!---Meghan End-->
+
+    </div>
+
+    <!-- Footer Section -->
+    <footer style="background-color:#FFAEBC; color: white; text-align: CENTER;">
+        <p style="color: white;">Cheers,<br>Meghan</p>
+    </footer>
+
 </body>
 </html>

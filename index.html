@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,7 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            margin: 0;
+            margin: 0 10%; /* Set left and right margins to 10% */
             padding: 0;
         }
 
@@ -30,7 +31,6 @@
             color: #555;
         }
 
-        /* Your additional styles here */
         .avatar {
             border-radius: 50%;
             width: 130px;
@@ -47,13 +47,39 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
-        /* Smooth scrolling styles */
         html {
             scroll-behavior: smooth;
         }
 
         .w3-bar-item {
             cursor: pointer;
+        }
+
+        #gallery {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .gallery-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .gallery-tab {
+            margin: 0 10px;
+            cursor: pointer;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .gallery-content {
+            display: none;
+        }
+
+        .gallery-content.active {
+            display: block;
         }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -74,42 +100,39 @@
         });
     </script>
 </head>
+
 <body>
 
-    <!-- Navigation Bar -->
-    <nav>
-        <div class="w3-bar w3-light-grey">
+    <nav style="background-color:#9D1B6F; color: white;">
+        <div class="" >
             <a href="#home" class="w3-bar-item w3-button">Home</a>
             <a href="#about" class="w3-bar-item w3-button">About Me</a>
-			<a href="#mycard" class="w3-bar-item w3-button">My Avatar</a>
-            <!-- Add other navigation links as needed -->
+            <a href="#mycard" class="w3-bar-item w3-button">My Avatar</a>
+            <a href="#gallery" class="w3-bar-item w3-button">Gallery</a>
         </div>
     </nav>
 
-    <!-- Content Section -->
     <div id="content">
 
-        <!-- Home Section -->
         <section id="home">
-            <!-- Your existing home content here -->
-            <h2>Welcome to My Portfolio</h2>
+            <h1><strong style="color:#9D1B6F;">Welcome to My Portfolio</strong></h1>
             <div class="card">
                 <img src="img/1.png" alt="Your Name - Profile Picture" class="avatar">
                 <p>Passionate web developer with expertise in PHP, Laravel, Python, MySQL, and GitHub versioning.</p>
             </div>
         </section>
 
-        <!-- About Me Section -->
         <section id="about">
-            <h1>About Me</h1>
+            <h1 style="color:#9D1B6F;">About Me</h1>
             <img src="https://placekitten.com/200/200" alt="Your Name" class="avatar">
-            <p>Hello there! I'm <strong>Your Name</strong>, a passionate and creative individual with a deep love for <em>your interests or profession</em>. My journey in <em>your field</em> has been marked by a commitment to excellence and a drive to make a positive impact.</p>
+            <br><br><p><strong style="color:#45CDE1;">Hello there! I'm <strong>Your Name</strong>, a passionate and creative individual with a deep love for </strong><em>your interests or profession</em>. My journey in <em>your field</em> has been marked by a commitment to excellence and a drive to make a positive impact.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis vehicula ligula eget libero accumsan, at mattis nisi tristique. Proin non tristique purus, a imperdiet felis. Vivamus ac orci eu felis congue porttitor. Suspendisse potenti.</p>
             <p>In my free time, you'll find me exploring <em>your hobbies or interests</em>, whether it's reading a good book, experimenting with new recipes in the kitchen, or embarking on exciting adventures. I believe in the power of continuous learning and am always seeking opportunities to expand my horizons.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis vehicula ligula eget libero accumsan, at mattis nisi tristique. Proin non tristique purus, a imperdiet felis. Vivamus ac orci eu felis congue porttitor. Suspendisse potenti.</p>
             <p>Let's connect and share our stories! Feel free to reach out to me at <a href="mailto:your@email.com">your@email.com</a> or connect with me on <a href="https://www.linkedin.com/in/your-profile" target="_blank">LinkedIn</a>.</p>
         </section>
- <section id="mycard">
+
+        <section id="mycard">
         <!---Meghan Start-->
   <div class="card" style="margin: 4%;background: white; width: 50%; border-radius: 6px; padding: 3%;  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
    <!---MyAvatar-->
@@ -132,12 +155,42 @@
     </script>
 <!---Meghan End-->
 
+        <!-- Gallery Section -->
+        <section id="gallery">
+            <h2 style="color:#9D1B6F;">Gallery</h2>
+
+            <!-- Gallery Tabs -->
+            <div class="gallery-tabs">
+                <div class="gallery-tab" onclick="showGallery('tab1')" style="background-color:#45CDE1; color: white;">Tab 1</div>
+                <div class="gallery-tab" onclick="showGallery('tab2')" style="background-color:#45CDE1; color: white;">Tab 2</div>
+                <!-- Add more tabs as needed -->
+            </div>
+
+            <!-- Gallery Content -->
+            <div id="tab1" class="gallery-content active">
+                <!-- Content for Tab 1 -->
+                <img src="img/3.jpg" alt="Image 1" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);">
+                <img src="img/2.jpg" alt="Image 2" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);">
+                <!-- Add more images as needed -->
+            </div>
+
+            <div id="tab2" class="gallery-content">
+                <!-- Content for Tab 2 -->
+                <img src="img/3.jpg" alt="Image 3">
+                <img src="img/2.jpg" alt="Image 4">
+                <!-- Add more images as needed -->
+            </div>
+
+            <!-- Add more gallery tabs and content as needed -->
+
+        </section>
+
     </div>
 
-    <!-- Footer Section -->
-    <footer style="background-color:#FFAEBC; color: white; text-align: CENTER;">
+    <footer style="background-color:#9D1B6F; color: white; text-align: CENTER;">
         <p style="color: white;">Cheers,<br>Meghan</p>
     </footer>
 
 </body>
+
 </html>
